@@ -18,7 +18,7 @@ end
 
     private
     def post_params
-        params.permit(:file,:caption)
+        params.permit(:file,:caption, :likes)
     end
 end
 
