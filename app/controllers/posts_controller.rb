@@ -6,7 +6,7 @@ class PostsController < ApplicationController
     def create
         post = Post.create(caption: post_params["caption"])
         post.avatar.attach(post_params["file"])
-        post.photo_url = url_for(post.avatar)
+        post.photo_url = post.avatar.blob.url
         if post.save
             render json: post
         else 
